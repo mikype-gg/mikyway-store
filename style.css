@@ -1,5 +1,5 @@
 /* ===========================
-   MikyWay Spatial UI 2026
+   MikyWay Spatial UI 
    Theme: Deep Navy & Soft Icy Blue (Light Mode Default)
 =========================== */
 
@@ -77,6 +77,47 @@ body {
 #typing-text { font-size: 14px; color: var(--text-secondary); font-weight: 400; }
 #typing-text::after { content: "|"; color: var(--accent-soft); animation: blink 0.8s infinite; margin-left: 3px; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* --- Video Player Styles --- */
+.hero-video {
+    margin-top: 24px; 
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 24px; 
+    overflow: hidden;
+    padding: 0; 
+    display: flex;
+}
+
+.promo-video {
+    width: 100%;
+    max-height: 250px; 
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9); 
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(11, 19, 32, 0.8), transparent);
+    color: #F8FAFC;
+    pointer-events: none;
+    text-align: left; 
+}
+
+.video-overlay h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
 
 /* --- Base Card (Area Kontak) --- */
 .spatial-card {
