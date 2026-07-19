@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* --- Typing Animation --- */
     const typingElement = document.getElementById("typing-text");
-    // Teks sudah diupdate sesuai instruksi
     const textToType = "Jual Beli iPhone Indragiri Hulu - Riau";
     let charIndex = 0;
     let isDeleting = false;
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
 
-    // Pastikan ikon awal sesuai dengan status default (Light Mode)
     if (document.body.classList.contains("light-mode")) {
         themeIcon.classList.remove("fa-sun");
         themeIcon.classList.add("fa-moon");
@@ -67,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* --- 3D Coverflow Carousel Logic --- */
     const carouselItems = document.querySelectorAll('.carousel-item');
-    let currentIndex = 1; // Memulai dari index ke-1 (Battery Health di tengah)
+    let currentIndex = 1; 
 
     function updateCarousel() {
         carouselItems.forEach((item, index) => {
