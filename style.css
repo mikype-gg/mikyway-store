@@ -94,10 +94,43 @@ body {
 
 .promo-video {
     width: 100%;
-    max-height: 450px; /* Ditinggikan khusus untuk video bentuk potret agar objek tetap jelas */
+    max-height: 450px; 
     object-fit: cover;
     display: block;
     filter: brightness(0.9); 
+}
+
+/* Tombol Mute/Unmute Mengambang */
+.mute-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(11, 19, 32, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #F8FAFC;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.2s ease;
+}
+
+.mute-toggle:active {
+    transform: scale(0.85);
+}
+
+/* Penyesuaian Tombol Mute pada Mode Terang */
+body.light-mode .mute-toggle {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(11, 19, 32, 0.1);
+    color: #0B1320;
 }
 
 .video-overlay {
