@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MikyWay Store | Trusted iPhone Store</title>
     <meta name="description" content="Jual Beli iPhone Indragiri Hulu - Riau.">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="light-mode">
 
+    <!-- Dark Mode -->
     <button class="theme-toggle" id="theme-toggle" aria-label="Ganti Tema">
         <i class="fa-solid fa-moon" id="theme-icon"></i>
+    </button>
+
+    <!-- Floating Sound Button -->
+    <button class="mute-toggle floating-mute" id="mute-toggle" aria-label="Aktifkan Suara">
+        <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
     </button>
 
     <div class="spatial-bg">
@@ -23,117 +30,155 @@
     </div>
 
     <div class="container">
-        
+
         <header class="spatial-header reveal">
+
             <div class="logo-wrapper">
                 <img src="LOGO.jpg" alt="MikyWay Store">
             </div>
-            <h1 class="brand-title">MikyWay Store</h1>
+
+            <h1 class="brand-title">
+                MikyWay Store
+            </h1>
+
             <div class="typing-container">
                 <p id="typing-text"></p>
             </div>
 
             <div class="spatial-card video-wrapper hero-video">
-                <video autoplay loop muted playsinline class="promo-video" id="promoVideo">
-                    <source src="promo.mov" type="video/quicktime">
-                    Browser kamu tidak mendukung pemutaran video.
+
+                <video
+                    id="promoVideo"
+                    class="promo-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                >
+                    <source src="promo.mp4" type="video/mp4">
+                    Browser kamu tidak mendukung video.
                 </video>
+
                 <div class="video-overlay">
                     <h3>Promo MikyWay</h3>
                 </div>
+
             </div>
 
-            <button class="mute-toggle" id="mute-toggle" aria-label="Nyalakan Suara">
-                <i class="fa-solid fa-volume-xmark" id="mute-icon"></i> <span>Aktifkan Suara Video</span>
-            </button>
         </header>
 
         <section class="reveal">
+
             <div class="bento-grid">
+
                 <a href="https://wa.me/6285805464434" target="_blank" class="spatial-card bento-item shimmer-effect">
+
                     <div class="icon-wrapper glow-accent">
                         <i class="fab fa-whatsapp"></i>
                     </div>
+
                     <div class="bento-text">
                         <h3>WhatsApp</h3>
                         <p>Tanya stok & harga terbaru</p>
                     </div>
+
                 </a>
-                
-                <a href="https://instagram.com/mikyway.inhu" target="_blank" class="spatial-card bento-item shimmer-effect" style="animation-delay: 1.5s;">
+
+                <a href="https://instagram.com/mikyway.inhu" target="_blank" class="spatial-card bento-item shimmer-effect" style="animation-delay:1.5s;">
+
                     <div class="icon-wrapper glow-accent">
                         <i class="fab fa-instagram"></i>
                     </div>
+
                     <div class="bento-text">
                         <h3>Instagram</h3>
                         <p>Lihat update harian</p>
                     </div>
+
                 </a>
-                
-                <a href="#" class="spatial-card bento-item shimmer-effect" style="animation-delay: 3s;">
+
+                <a href="#" class="spatial-card bento-item shimmer-effect" style="animation-delay:3s;">
+
                     <div class="icon-wrapper glow-accent">
                         <i class="fa-solid fa-right-left"></i>
                     </div>
+
                     <div class="bento-text">
                         <h3>Trade In</h3>
                         <p>Tukar tambah iPhone</p>
                     </div>
+
                 </a>
-                
-                <a href="#" class="spatial-card bento-item shimmer-effect" style="animation-delay: 4.5s;">
+
+                <a href="#" class="spatial-card bento-item shimmer-effect" style="animation-delay:4.5s;">
+
                     <div class="icon-wrapper glow-accent">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
+
                     <div class="bento-text">
                         <h3>Lokasi COD</h3>
                         <p>Indragiri Hulu</p>
                     </div>
+
                 </a>
+
             </div>
+
         </section>
 
         <section class="reveal">
-            <h2 class="section-heading text-center">Kenapa MikyWay?</h2>
-            
+
+            <h2 class="section-heading text-center">
+                Kenapa MikyWay?
+            </h2>
+
             <div class="carousel-container" id="carousel">
+
                 <div class="carousel-item">
                     <i class="fa-solid fa-certificate carousel-icon"></i>
                     <span class="carousel-text">Unit 100% ORI</span>
                 </div>
-                
+
                 <div class="carousel-item">
                     <i class="fa-solid fa-battery-full carousel-icon"></i>
                     <span class="carousel-text">Battery Health Jelas</span>
                 </div>
-                
+
                 <div class="carousel-item">
                     <i class="fa-solid fa-handshake carousel-icon"></i>
                     <span class="carousel-text">Bisa COD Indragiri Hulu</span>
                 </div>
-                
+
                 <div class="carousel-item">
                     <i class="fa-solid fa-mobile-screen carousel-icon"></i>
-                    <span class="carousel-text">Jual/Beli</span>
+                    <span class="carousel-text">Jual / Beli</span>
                 </div>
-                
+
                 <div class="carousel-item">
                     <i class="fa-solid fa-shield-halved carousel-icon"></i>
                     <span class="carousel-text">Bergaransi</span>
                 </div>
-                
+
                 <div class="carousel-item">
                     <i class="fa-solid fa-bolt carousel-icon"></i>
                     <span class="carousel-text">Fast Response</span>
                 </div>
+
             </div>
+
         </section>
 
         <footer class="reveal">
-            <p>Website ini dibuat oleh mikyway dengan sepenuh Hati♥️</p>
+            <p>
+                Website ini dibuat oleh MikyWay dengan sepenuh Hati ♥️
+            </p>
         </footer>
 
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
