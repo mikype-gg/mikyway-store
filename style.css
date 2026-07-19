@@ -78,7 +78,7 @@ body {
 #typing-text::after { content: "|"; color: var(--accent-soft); animation: blink 0.8s infinite; margin-left: 3px; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- Video Player Styles (Optimasi Potret 718x1122) --- */
+/* --- Video Player Styles (Fix Potret & Tombol di In-App Browser) --- */
 .hero-video {
     margin-top: 24px; 
 }
@@ -89,12 +89,14 @@ body {
     border-radius: 24px; 
     overflow: hidden;
     padding: 0; 
-    display: flex;
+    display: block; /* Diganti dari flex ke block agar tombol absolute tidak terlempar di iOS */
+    aspect-ratio: 4 / 5; /* Memaksa proporsi kotak memanjang (potret) yang aman di HP */
+    background-color: var(--bg-base);
 }
 
 .promo-video {
     width: 100%;
-    max-height: 450px; 
+    height: 100%; /* Memaksa tinggi video menyesuaikan proporsi wadah */
     object-fit: cover;
     display: block;
     filter: brightness(0.9); 
@@ -103,13 +105,13 @@ body {
 /* Tombol Mute/Unmute Mengambang */
 .mute-toggle {
     position: absolute;
-    top: 16px;
+    bottom: 16px; /* Dipindah ke bawah agar gampang disentuh jempol */
     right: 16px;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background: rgba(11, 19, 32, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(11, 19, 32, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: #F8FAFC;
@@ -118,8 +120,9 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 10;
+    z-index: 50; /* Z-index diperbesar agar diprioritaskan oleh layar */
     transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.2s ease;
+    pointer-events: auto;
 }
 
 .mute-toggle:active {
@@ -128,8 +131,8 @@ body {
 
 /* Penyesuaian Tombol Mute pada Mode Terang */
 body.light-mode .mute-toggle {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(11, 19, 32, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(11, 19, 32, 0.2);
     color: #0B1320;
 }
 
@@ -138,15 +141,17 @@ body.light-mode .mute-toggle {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 16px;
-    background: linear-gradient(to top, rgba(11, 19, 32, 0.8), transparent);
+    /* Padding di area kanan (70px) diberikan jarak agar teks tidak tertimpa tombol mute */
+    padding: 24px 70px 16px 16px; 
+    background: linear-gradient(to top, rgba(11, 19, 32, 0.8) 0%, transparent 100%);
     color: #F8FAFC;
     pointer-events: none;
     text-align: left; 
+    z-index: 10;
 }
 
 .video-overlay h3 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     margin: 0;
     letter-spacing: 0.5px;
