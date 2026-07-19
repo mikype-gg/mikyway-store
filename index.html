@@ -34,10 +34,15 @@
             </div>
 
             <div class="spatial-card video-wrapper hero-video">
-                <video autoplay loop muted playsinline class="promo-video">
+                <video autoplay loop muted playsinline class="promo-video" id="promoVideo">
                     <source src="promo.mov" type="video/quicktime">
                     Browser kamu tidak mendukung pemutaran video.
                 </video>
+                
+                <button class="mute-toggle" id="mute-toggle" aria-label="Nyalakan Suara">
+                    <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
+                </button>
+
                 <div class="video-overlay">
                     <h3>Promo MikyWay</h3>
                 </div>
