@@ -6,6 +6,7 @@
     <title>MikyWay Store | Trusted iPhone Store</title>
     <meta name="description" content="Jual Beli iPhone Indragiri Hulu - Riau.">
     
+    <!-- Ikon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -13,10 +14,17 @@
 </head>
 <body class="light-mode">
 
+    <!-- Tombol Mengambang (Dark/Light Mode) -->
     <button class="theme-toggle" id="theme-toggle" aria-label="Ganti Tema">
         <i class="fa-solid fa-moon" id="theme-icon"></i>
     </button>
 
+    <!-- Tombol Mengambang (Volume/Mute) -->
+    <button class="mute-toggle" id="mute-toggle" aria-label="Nyalakan Suara">
+        <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
+    </button>
+
+    <!-- Spatial Glow Background -->
     <div class="spatial-bg">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
@@ -24,6 +32,7 @@
 
     <div class="container">
         
+        <!-- Area Profil & Showcase Video Potret -->
         <header class="spatial-header reveal">
             <div class="logo-wrapper">
                 <img src="LOGO.jpg" alt="MikyWay Store">
@@ -33,22 +42,19 @@
                 <p id="typing-text"></p>
             </div>
 
+            <!-- Video Player Potret di Header -->
             <div class="spatial-card video-wrapper hero-video">
                 <video autoplay loop muted playsinline class="promo-video" id="promoVideo">
                     <source src="promo.mov" type="video/quicktime">
                     Browser kamu tidak mendukung pemutaran video.
                 </video>
-                
-                <button class="mute-toggle" id="mute-toggle" aria-label="Nyalakan Suara">
-                    <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
-                </button>
-
                 <div class="video-overlay">
                     <h3>Promo MikyWay</h3>
                 </div>
             </div>
         </header>
 
+        <!-- Area Kontak -->
         <section class="reveal">
             <div class="bento-grid">
                 <a href="https://wa.me/6285805464434" target="_blank" class="spatial-card bento-item shimmer-effect">
@@ -93,6 +99,7 @@
             </div>
         </section>
 
+        <!-- Area Keunggulan (3D Coverflow) -->
         <section class="reveal">
             <h2 class="section-heading text-center">Kenapa MikyWay?</h2>
             
@@ -129,6 +136,7 @@
             </div>
         </section>
 
+        <!-- Footer -->
         <footer class="reveal">
             <p>Website ini dibuat oleh mikyway dengan sepenuh Hati♥️</p>
         </footer>
