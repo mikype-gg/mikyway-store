@@ -78,7 +78,7 @@ body {
 #typing-text::after { content: "|"; color: var(--accent-soft); animation: blink 0.8s infinite; margin-left: 3px; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- Video Player Styles (Fix Potret & Tombol di In-App Browser) --- */
+/* --- Video Player Styles --- */
 .hero-video {
     margin-top: 24px; 
 }
@@ -89,51 +89,17 @@ body {
     border-radius: 24px; 
     overflow: hidden;
     padding: 0; 
-    display: block; /* Diganti dari flex ke block agar tombol absolute tidak terlempar di iOS */
-    aspect-ratio: 4 / 5; /* Memaksa proporsi kotak memanjang (potret) yang aman di HP */
+    display: block;
+    aspect-ratio: 4 / 5; 
     background-color: var(--bg-base);
 }
 
 .promo-video {
     width: 100%;
-    height: 100%; /* Memaksa tinggi video menyesuaikan proporsi wadah */
+    height: 100%; 
     object-fit: cover;
     display: block;
     filter: brightness(0.9); 
-}
-
-/* Tombol Mute/Unmute Mengambang */
-.mute-toggle {
-    position: absolute;
-    bottom: 16px; /* Dipindah ke bawah agar gampang disentuh jempol */
-    right: 16px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(11, 19, 32, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: #F8FAFC;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 50; /* Z-index diperbesar agar diprioritaskan oleh layar */
-    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.2s ease;
-    pointer-events: auto;
-}
-
-.mute-toggle:active {
-    transform: scale(0.85);
-}
-
-/* Penyesuaian Tombol Mute pada Mode Terang */
-body.light-mode .mute-toggle {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(11, 19, 32, 0.2);
-    color: #0B1320;
 }
 
 .video-overlay {
@@ -141,8 +107,7 @@ body.light-mode .mute-toggle {
     bottom: 0;
     left: 0;
     width: 100%;
-    /* Padding di area kanan (70px) diberikan jarak agar teks tidak tertimpa tombol mute */
-    padding: 24px 70px 16px 16px; 
+    padding: 24px 16px 16px 16px; /* Padding dikembalikan normal karena tombol sudah di luar */
     background: linear-gradient(to top, rgba(11, 19, 32, 0.8) 0%, transparent 100%);
     color: #F8FAFC;
     pointer-events: none;
@@ -261,6 +226,7 @@ footer p { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
 .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* --- Tombol Mengambang Global --- */
 .theme-toggle {
     position: fixed; 
     top: 20px; 
@@ -285,5 +251,33 @@ footer p { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
 
 .theme-toggle:active { 
     transform: scale(0.85); 
+    background: var(--glass-border); 
+}
+
+/* Tombol Mute Mengambang di bawah Theme Toggle */
+.mute-toggle {
+    position: fixed; 
+    top: 80px; /* Diberi jarak 12px dari tombol tema (20px top + 48px height = 68px + 12px) */
+    right: 20px; 
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%;
+    background: var(--glass-bg); 
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 25px var(--shadow-color); 
+    color: var(--accent-soft); 
+    font-size: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+    z-index: 999;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease;
+}
+
+.mute-toggle:active {
+    transform: scale(0.85);
     background: var(--glass-border); 
 }
