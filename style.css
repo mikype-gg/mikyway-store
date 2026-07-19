@@ -78,7 +78,7 @@ body {
 #typing-text::after { content: "|"; color: var(--accent-soft); animation: blink 0.8s infinite; margin-left: 3px; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- Video Player Styles --- */
+/* --- Video Player Styles (Optimasi Potret 718x1122) --- */
 .hero-video {
     margin-top: 24px; 
 }
@@ -94,7 +94,7 @@ body {
 
 .promo-video {
     width: 100%;
-    max-height: 250px; 
+    max-height: 450px; /* Ditinggikan khusus untuk video bentuk potret agar objek tetap jelas */
     object-fit: cover;
     display: block;
     filter: brightness(0.9); 
