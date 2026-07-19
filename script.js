@@ -63,32 +63,47 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* --- Video Mute/Unmute Logic (Anti-Bug Instagram) --- */
+    /* --- Video Mute/Unmute Logic --- */
     const promoVideo = document.getElementById("promoVideo");
     const muteToggle = document.getElementById("mute-toggle");
     const muteIcon = document.getElementById("mute-icon");
-    const muteText = muteToggle ? muteToggle.querySelector("span") : null;
 
     if (promoVideo && muteToggle && muteIcon) {
-        muteToggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
+
+        promoVideo.defaultMuted = true;
+        promoVideo.muted = true;
+        promoVideo.volume = 0;
+
+        promoVideo.play().catch(()=>{});
+
+        const updateMuteUI = () => {
             if (promoVideo.muted) {
-                promoVideo.muted = false;
-                promoVideo.volume = 1.0;
-                
-                // Paksa pemutaran ulang video context untuk membypass enkripsi audio iOS/Instagram
-                promoVideo.play().then(() => {
-                    muteIcon.className = "fa-solid fa-volume-high";
-                    if (muteText) muteText.innerText = "Matikan Suara Video";
-                }).catch(err => {
-                    console.log("Audio didorong ulang: ", err);
-                });
-            } else {
-                promoVideo.muted = true;
                 muteIcon.className = "fa-solid fa-volume-xmark";
-                if (muteText) muteText.innerText = "Aktifkan Suara Video";
+                muteToggle.setAttribute("aria-label","Aktifkan Suara");
+            } else {
+                muteIcon.className = "fa-solid fa-volume-high";
+                muteToggle.setAttribute("aria-label","Matikan Suara");
+            }
+        };
+
+        updateMuteUI();
+
+        muteToggle.addEventListener("click", async (e)=>{
+            e.preventDefault();
+            try{
+                if(promoVideo.muted){
+                    promoVideo.defaultMuted=false;
+                    promoVideo.muted=false;
+                    promoVideo.volume=1;
+                    await promoVideo.play();
+                }else{
+                    promoVideo.defaultMuted=true;
+                    promoVideo.muted=true;
+                    promoVideo.volume=0;
+                }
+                updateMuteUI();
+            }catch(err){
+                console.log(err);
             }
         });
     }
