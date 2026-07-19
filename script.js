@@ -63,6 +63,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    /* --- Video Mute/Unmute Logic (Anti-Bug Instagram) --- */
+    const promoVideo = document.getElementById("promoVideo");
+    const muteToggle = document.getElementById("mute-toggle");
+    const muteIcon = document.getElementById("mute-icon");
+    const muteText = muteToggle ? muteToggle.querySelector("span") : null;
+
+    if (promoVideo && muteToggle && muteIcon) {
+        muteToggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (promoVideo.muted) {
+                promoVideo.muted = false;
+                promoVideo.volume = 1.0;
+                
+                // Paksa pemutaran ulang video context untuk membypass enkripsi audio iOS/Instagram
+                promoVideo.play().then(() => {
+                    muteIcon.className = "fa-solid fa-volume-high";
+                    if (muteText) muteText.innerText = "Matikan Suara Video";
+                }).catch(err => {
+                    console.log("Audio didorong ulang: ", err);
+                });
+            } else {
+                promoVideo.muted = true;
+                muteIcon.className = "fa-solid fa-volume-xmark";
+                if (muteText) muteText.innerText = "Aktifkan Suara Video";
+            }
+        });
+    }
+
     /* --- 3D Coverflow Carousel Logic --- */
     const carouselItems = document.querySelectorAll('.carousel-item');
     let currentIndex = 1; 
