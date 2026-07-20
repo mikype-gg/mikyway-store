@@ -6,7 +6,7 @@
     <title>MikyWay Store | Trusted iPhone Store</title>
     <meta name="description" content="Jual Beli iPhone Indragiri Hulu - Riau.">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -14,22 +14,35 @@
 
 <body class="light-mode">
 
-    <!-- Dynamic Island (Poni iPhone) -->
-    <div class="dynamic-island-wrapper">
-        <div class="dynamic-island">
-            <!-- Dark Mode Toggle -->
-            <button class="di-button" id="theme-toggle" aria-label="Ganti Tema">
-                <i class="fa-solid fa-moon" id="theme-icon"></i>
-            </button>
-            
-            <!-- Camera Indicator (Estetika Poni) -->
-            <div class="di-camera"></div>
+    <!-- Dynamic Island -->
+    <div class="dynamic-island">
 
-            <!-- Floating Sound Button Toggle -->
-            <button class="di-button" id="mute-toggle" aria-label="Aktifkan Suara">
-                <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
-            </button>
-        </div>
+        <button
+            class="island-btn"
+            id="theme-toggle"
+            aria-label="Ganti Tema">
+
+            <i
+                class="fa-solid fa-moon"
+                id="theme-icon">
+            </i>
+
+        </button>
+
+        <div class="island-divider"></div>
+
+        <button
+            class="island-btn"
+            id="mute-toggle"
+            aria-label="Aktifkan Suara">
+
+            <i
+                class="fa-solid fa-volume-xmark"
+                id="mute-icon">
+            </i>
+
+        </button>
+
     </div>
 
     <div class="spatial-bg">
@@ -62,14 +75,16 @@
                     muted
                     loop
                     playsinline
-                    preload="auto"
-                >
+                    preload="auto">
+
                     <source src="promo.mp4" type="video/mp4">
+
                     Browser kamu tidak mendukung video.
+
                 </video>
 
                 <div class="video-overlay">
-                    <h3>Kenapa harus MikyWay?</h3>
+                    <h3>Promo MikyWay</h3>
                 </div>
 
             </div>
@@ -80,7 +95,9 @@
 
             <div class="bento-grid">
 
-                <a href="https://wa.me/6285805464434" target="_blank" class="spatial-card bento-item shimmer-effect">
+                <a href="https://wa.me/6285805464434"
+                   target="_blank"
+                   class="spatial-card bento-item shimmer-effect">
 
                     <div class="icon-wrapper glow-accent">
                         <i class="fab fa-whatsapp"></i>
@@ -93,7 +110,10 @@
 
                 </a>
 
-                <a href="https://instagram.com/mikyway.inhu" target="_blank" class="spatial-card bento-item shimmer-effect" style="animation-delay:1.5s;">
+                <a href="https://instagram.com/mikyway.inhu"
+                   target="_blank"
+                   class="spatial-card bento-item shimmer-effect"
+                   style="animation-delay:1.5s;">
 
                     <div class="icon-wrapper glow-accent">
                         <i class="fab fa-instagram"></i>
@@ -106,7 +126,9 @@
 
                 </a>
 
-                <a href="#" class="spatial-card bento-item shimmer-effect" style="animation-delay:3s;">
+                <a href="#"
+                   class="spatial-card bento-item shimmer-effect"
+                   style="animation-delay:3s;">
 
                     <div class="icon-wrapper glow-accent">
                         <i class="fa-solid fa-right-left"></i>
@@ -119,7 +141,9 @@
 
                 </a>
 
-                <a href="#" class="spatial-card bento-item shimmer-effect" style="animation-delay:4.5s;">
+                <a href="#"
+                   class="spatial-card bento-item shimmer-effect"
+                   style="animation-delay:4.5s;">
 
                     <div class="icon-wrapper glow-accent">
                         <i class="fa-solid fa-location-dot"></i>
