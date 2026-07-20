@@ -14,15 +14,23 @@
 
 <body class="light-mode">
 
-    <!-- Dark Mode -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Ganti Tema">
-        <i class="fa-solid fa-moon" id="theme-icon"></i>
-    </button>
+    <!-- Dynamic Island (Poni iPhone) -->
+    <div class="dynamic-island-wrapper">
+        <div class="dynamic-island">
+            <!-- Dark Mode Toggle -->
+            <button class="di-button" id="theme-toggle" aria-label="Ganti Tema">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+            
+            <!-- Camera Indicator (Estetika Poni) -->
+            <div class="di-camera"></div>
 
-    <!-- Floating Sound Button -->
-    <button class="mute-toggle floating-mute" id="mute-toggle" aria-label="Aktifkan Suara">
-        <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
-    </button>
+            <!-- Floating Sound Button Toggle -->
+            <button class="di-button" id="mute-toggle" aria-label="Aktifkan Suara">
+                <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
+            </button>
+        </div>
+    </div>
 
     <div class="spatial-bg">
         <div class="glow-orb orb-1"></div>
