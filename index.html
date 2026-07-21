@@ -14,10 +14,12 @@
 
 <body class="light-mode">
 
+    <!-- Dark Mode -->
     <button class="theme-toggle" id="theme-toggle" aria-label="Ganti Tema">
         <i class="fa-solid fa-moon" id="theme-icon"></i>
     </button>
 
+    <!-- Floating Sound Button -->
     <button class="mute-toggle floating-mute" id="mute-toggle" aria-label="Aktifkan Suara">
         <i class="fa-solid fa-volume-xmark" id="mute-icon"></i>
     </button>
@@ -70,6 +72,7 @@
 
             <div class="bento-grid">
 
+                <!-- WhatsApp -->
                 <a href="https://wa.me/6285805464434" target="_blank" class="spatial-card bento-item shimmer-effect">
                     <div class="icon-wrapper glow-accent">
                         <i class="fab fa-whatsapp"></i>
@@ -80,6 +83,7 @@
                     </div>
                 </a>
 
+                <!-- Instagram -->
                 <a href="https://instagram.com/mikyway.inhu" target="_blank" class="spatial-card bento-item shimmer-effect" style="animation-delay:1.5s;">
                     <div class="icon-wrapper glow-accent">
                         <i class="fab fa-instagram"></i>
@@ -90,6 +94,7 @@
                     </div>
                 </a>
 
+                <!-- Maps Indragiri Hulu (Memanjang Bawah WA & IG) -->
                 <a href="https://www.google.com/maps/search/Indragiri+Hulu,+Riau" target="_blank" class="spatial-card bento-item shimmer-effect full-width map-container" style="animation-delay:3s;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021235.8055685764!2d101.59367155!3d-0.5411757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2a4ce05c59664b%3A0x3039d80b220cb30!2sKabupaten%20Indragiri%20Hulu%2C%20Riau!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div class="map-overlay">
@@ -97,15 +102,7 @@
                         <span>Lokasi COD: Indragiri Hulu</span>
                     </div>
                 </a>
-
-                <a href="https://wa.me/6285805464434" target="_blank" class="spatial-card bento-item shimmer-effect full-width order-btn" style="animation-delay:4.5s;">
-                    <div class="icon-wrapper glow-accent">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div class="bento-text">
-                        <h3>Order Sekarang</h3>
-                    </div>
-                </a>
+                <!-- Catatan: Tombol Order ditarik dari sini dan dipindah ke bagian paling bawah -->
 
             </div>
 
@@ -153,61 +150,70 @@
 
         </section>
 
+        <!-- REVISI BARU: Testimoni Chat Bubble -->
         <section class="reveal">
             <h2 class="section-heading text-center">
                 Apa kata mereka?
             </h2>
-            <div class="testimonial-container" id="testimonial-slider">
+            <div class="testimonial-container" id="testimonial-slider" title="Klik untuk lanjut">
                 
+                <!-- Pelanggan 1 -->
                 <div class="testimonial-card active">
-                    <div class="testimonial-header">
-                        <span class="testimonial-user">S*****i</span>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                    <div class="chat-bubble">
+                        <div class="chat-header">
+                            <span class="chat-name">S*****i</span>
+                            <div class="chat-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="testimonial-bubble">
-                        <p>“Mantap, walaupun second dapat unit dengan kondisi mulus”</p>
+                        <p class="chat-text">“Mantap, walaupun second dapat unit dengan kondisi mulus”</p>
+                        <span class="chat-time">10.42</span>
                     </div>
                 </div>
 
+                <!-- Pelanggan 2 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <span class="testimonial-user">A*****a</span>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                    <div class="chat-bubble">
+                        <div class="chat-header">
+                            <span class="chat-name">A*****a</span>
+                            <div class="chat-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="testimonial-bubble">
-                        <p>“Walaupun dpt unit simlock, tapi udah di pasangin Rsim tanam & jaringan indosat gw di bantu permanen gg🔥”</p>
+                        <p class="chat-text">“Walaupun dpt unit simlock, tapi udah di pasangin Rsim tanam & jaringan indosat gw di bantu permanen gg🔥”</p>
+                        <span class="chat-time">11.15</span>
                     </div>
                 </div>
 
+                <!-- Pelanggan 3 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <span class="testimonial-user">F*****n</span>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                    <div class="chat-bubble">
+                        <div class="chat-header">
+                            <span class="chat-name">F*****n</span>
+                            <div class="chat-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="testimonial-bubble">
-                        <p>“Belanja kedua kali nya, mantap abangku”</p>
+                        <p class="chat-text">“Belanja kedua kali nya, mantap abangku”</p>
+                        <span class="chat-time">14.30</span>
                     </div>
                 </div>
 
             </div>
+        </section>
+
+        <!-- REVISI BARU: Tombol Order Sekarang dipindah ke paling bawah (Lebih Besar & Jelas) -->
+        <section class="reveal">
+            <a href="https://wa.me/6285805464434" target="_blank" class="spatial-card shimmer-effect order-btn-bottom">
+                <div class="icon-wrapper glow-accent">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="btn-text">
+                    <h3>Order Sekarang</h3>
+                    <p>Hubungi admin & konsultasi unit</p>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+            </a>
         </section>
 
         <footer class="reveal">
