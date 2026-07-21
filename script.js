@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       REVISI BARU: LOGIKA ANIMASI TESTIMONI
+       REVISI: LOGIKA ANIMASI TESTIMONI
     ========================================= */
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     const testimonialSlider = document.getElementById('testimonial-slider');
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Klik manual pada kotak chat untuk memicu pergantian instan
         testimonialSlider.addEventListener('click', () => {
             showNextTestimonial();
-            startTestimonialTimer(); // Timer direset kembali ke 5 detik setelah interaksi klik
+            startTestimonialTimer(); // Reset waktu setelah diklik
         });
         startTestimonialTimer();
     }
