@@ -79,76 +79,17 @@ body {
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 /* --- Video Player Styles --- */
-.hero-video {
-    margin-top: 24px; 
-}
-
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    border-radius: 24px; 
-    overflow: hidden;
-    padding: 0; 
-    display: block;
-    aspect-ratio: 4 / 5; 
-    background-color: var(--bg-base);
-}
-
-.promo-video {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.9); 
-}
-
-.video-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 24px 16px 16px 16px; 
-    background: linear-gradient(to top, rgba(11, 19, 32, 0.8) 0%, transparent 100%);
-    color: #F8FAFC;
-    pointer-events: none;
-    text-align: left; 
-    z-index: 10;
-}
-
-.video-overlay h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0;
-    letter-spacing: 0.5px;
-}
+.hero-video { margin-top: 24px; }
+.video-wrapper { position: relative; width: 100%; border-radius: 24px; overflow: hidden; padding: 0; display: block; aspect-ratio: 4 / 5; background-color: var(--bg-base); }
+.promo-video { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.9); }
+.video-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px 16px 16px 16px; background: linear-gradient(to top, rgba(11, 19, 32, 0.8) 0%, transparent 100%); color: #F8FAFC; pointer-events: none; text-align: left; z-index: 10; }
+.video-overlay h3 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: 0.5px; }
 
 /* --- Floating Sound Button --- */
-.mute-toggle{
-    position:fixed;
-    top:78px;
-    right:20px;
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:var(--glass-bg);
-    border:1px solid var(--glass-border);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    box-shadow:inset 0 1px 0 var(--glass-highlight),0 10px 25px var(--shadow-color);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:var(--accent-soft);
-    font-size:19px;
-    cursor:pointer;
-    z-index:999;
-    transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
-}
-.mute-toggle:hover{
-    box-shadow:inset 0 1px 0 var(--glass-highlight),0 0 18px var(--accent-glow),0 10px 25px var(--shadow-color);
-}
-.mute-toggle:active{transform:scale(.88);}
-.mute-toggle i{pointer-events:none;}
+.mute-toggle{ position:fixed; top:78px; right:20px; width:48px; height:48px; border-radius:50%; background:var(--glass-bg); border:1px solid var(--glass-border); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-shadow:inset 0 1px 0 var(--glass-highlight),0 10px 25px var(--shadow-color); display:flex; justify-content:center; align-items:center; color:var(--accent-soft); font-size:19px; cursor:pointer; z-index:999; transition:transform .25s ease,background .25s ease,box-shadow .25s ease; }
+.mute-toggle:hover{ box-shadow:inset 0 1px 0 var(--glass-highlight),0 0 18px var(--accent-glow),0 10px 25px var(--shadow-color); }
+.mute-toggle:active{ transform:scale(.88); }
+.mute-toggle i{ pointer-events:none; }
 
 @media(max-width:480px){
     .theme-toggle{top:18px;right:18px;}
@@ -156,101 +97,38 @@ body {
 }
 
 /* --- Base Card (Area Kontak) --- */
-.spatial-card {
-    background: var(--glass-bg); border: 1px solid var(--glass-border);
-    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-    box-shadow: inset 0 1px 0 var(--glass-highlight), 0 15px 35px var(--shadow-color);
-    border-radius: 24px; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    text-decoration: none; color: var(--text-primary); position: relative; overflow: hidden;
-}
+.spatial-card { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: inset 0 1px 0 var(--glass-highlight), 0 15px 35px var(--shadow-color); border-radius: 24px; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); text-decoration: none; color: var(--text-primary); position: relative; overflow: hidden; }
 .spatial-card:active { transform: scale(0.95); background: var(--glass-border); }
-.shimmer-effect::before {
-    content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
-    background: linear-gradient(to right, transparent, var(--glass-border), transparent);
-    transform: skewX(-25deg); animation: shimmer 6s infinite; pointer-events: none;
-}
+.shimmer-effect::before { content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%; background: linear-gradient(to right, transparent, var(--glass-border), transparent); transform: skewX(-25deg); animation: shimmer 6s infinite; pointer-events: none; }
 @keyframes shimmer { 0% { left: -150%; } 20%, 100% { left: 200%; } }
 
 /* --- Bento Grid (Kontak) --- */
 .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .bento-item { display: flex; flex-direction: column; padding: 20px; gap: 16px; }
-.icon-wrapper {
-    width: 44px; height: 44px; border-radius: 14px; display: flex; justify-content: center; align-items: center;
-    font-size: 20px; color: var(--accent-soft); background: var(--glass-border); border: 1px solid var(--glass-border);
-}
+.icon-wrapper { width: 44px; height: 44px; border-radius: 14px; display: flex; justify-content: center; align-items: center; font-size: 20px; color: var(--accent-soft); background: var(--glass-border); border: 1px solid var(--glass-border); }
 .glow-accent i { text-shadow: 0 0 15px var(--accent-glow); color: var(--accent-soft); }
 .bento-text { display: flex; flex-direction: column; gap: 4px; }
 .bento-text h3 { font-size: 15px; font-weight: 600; }
 .bento-text p { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
 
+/* --- Maps --- */
+.full-width { grid-column: span 2; }
+.map-container { padding: 0; min-height: 160px; position: relative; overflow: hidden; display: block; border-radius: 24px; }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: none; z-index: 1; }
+.map-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 14px 16px; background: linear-gradient(to top, rgba(11, 19, 32, 0.95), transparent); color: #F8FAFC; display: flex; align-items: center; gap: 8px; z-index: 2; pointer-events: none; }
+.map-overlay span { font-size: 14px; font-weight: 600; }
+
 /* --- Area Keunggulan (3D Coverflow Tanpa Kotak) --- */
 .section-heading.text-center { text-align: center; font-size: 16px; font-weight: 600; margin-bottom: 20px; color: var(--accent-soft); }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    height: 120px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-top: 5px;
-}
-
-.carousel-item {
-    position: absolute;
-    left: 50%;
-    margin-left: -110px; 
-    width: 220px;
-    padding: 10px; 
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease, z-index 0.6s ease, filter 0.6s ease;
-}
-
-.carousel-icon {
-    font-size: 38px; 
-    color: var(--accent-soft);
-    text-shadow: 0 0 20px var(--accent-glow);
-}
-
-.carousel-text {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.carousel-item.active {
-    transform: translateX(0) scale(1.1); 
-    opacity: 1;
-    z-index: 3;
-    filter: blur(0);
-}
-
-.carousel-item.prev {
-    transform: translateX(-65%) scale(0.85);
-    opacity: 0.35; 
-    z-index: 2;
-    filter: blur(1.5px);
-}
-
-.carousel-item.next {
-    transform: translateX(65%) scale(0.85);
-    opacity: 0.35; 
-    z-index: 2;
-    filter: blur(1.5px);
-}
-
-.carousel-item.hidden {
-    transform: translateX(0) scale(0.5);
-    opacity: 0;
-    z-index: 1;
-}
+.carousel-container { position: relative; width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-top: 5px; }
+.carousel-item { position: absolute; left: 50%; margin-left: -110px; width: 220px; padding: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; color: var(--text-primary); cursor: pointer; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease, z-index 0.6s ease, filter 0.6s ease; }
+.carousel-icon { font-size: 38px; color: var(--accent-soft); text-shadow: 0 0 20px var(--accent-glow); }
+.carousel-text { font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
+.carousel-item.active { transform: translateX(0) scale(1.1); opacity: 1; z-index: 3; filter: blur(0); }
+.carousel-item.prev { transform: translateX(-65%) scale(0.85); opacity: 0.35; z-index: 2; filter: blur(1.5px); }
+.carousel-item.next { transform: translateX(65%) scale(0.85); opacity: 0.35; z-index: 2; filter: blur(1.5px); }
+.carousel-item.hidden { transform: translateX(0) scale(0.5); opacity: 0; z-index: 1; }
 
 /* --- Footer & FAB --- */
 footer { text-align: center; margin-top: 10px; }
@@ -259,135 +137,138 @@ footer p { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
 .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-.theme-toggle {
-    position: fixed; 
-    top: 20px; 
-    right: 20px; 
-    width: 48px; 
-    height: 48px; 
-    border-radius: 50%;
-    background: var(--glass-bg); 
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 10px 25px var(--shadow-color); 
-    color: var(--accent-soft); 
-    font-size: 20px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    cursor: pointer; 
-    z-index: 999;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease;
-}
+.theme-toggle { position: fixed; top: 20px; right: 20px; width: 48px; height: 48px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 10px 25px var(--shadow-color); color: var(--accent-soft); font-size: 20px; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 999; transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease; }
+.theme-toggle:active { transform: scale(0.85); background: var(--glass-border); }
 
-.theme-toggle:active { 
-    transform: scale(0.85); 
-    background: var(--glass-border); 
-}
-
-/* --- Kelas Modifikasi Maps & Order Sebelumnya --- */
-.full-width { grid-column: span 2; }
-.map-container { padding: 0; min-height: 160px; position: relative; overflow: hidden; display: block; border-radius: 24px; }
-.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; pointer-events: none; z-index: 1; }
-.map-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 14px 16px; background: linear-gradient(to top, rgba(11, 19, 32, 0.95), transparent); color: #F8FAFC; display: flex; align-items: center; gap: 8px; z-index: 2; pointer-events: none; }
-.map-overlay span { font-size: 14px; font-weight: 600; }
-.order-btn { flex-direction: row; justify-content: center; align-items: center; padding: 16px; gap: 12px; }
-.order-btn .icon-wrapper { width: 38px; height: 38px; font-size: 18px; }
-.order-btn h3 { margin: 0; font-size: 16px; }
 
 /* =========================================
-   REVISI BARU: TEMA UTAMA SEKSI TESTIMONI
+   REVISI: DESAIN BUBBLE CHAT (GRID OVERLAY)
 ========================================= */
+
+/* Menggunakan teknik CSS Grid Overlay agar elemen tumpang tindih sempurna tanpa merusak tinggi container */
 .testimonial-container {
-    position: relative;
-    width: 100%;
-    min-height: 145px; /* Mencegah layout meloncat saat perpindahan */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0;
     margin-top: 5px;
     cursor: pointer;
 }
 
 .testimonial-card {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: inset 0 1px 0 var(--glass-highlight), 0 15px 35px var(--shadow-color);
-    border-radius: 24px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    grid-area: 1 / 1;
     opacity: 0;
-    transform: translateY(15px) scale(0.97);
     pointer-events: none;
+    transform: translateY(20px) scale(0.96);
     transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
 }
 
-/* Card yang sedang aktif tampil dengan tinggi dinamis */
 .testimonial-card.active {
-    position: relative;
     opacity: 1;
-    transform: translateY(0) scale(1);
     pointer-events: auto;
+    transform: translateY(0) scale(1);
     z-index: 2;
 }
 
-.testimonial-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 8px;
-}
-
-.testimonial-user {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-}
-
-.testimonial-stars {
-    color: #FFD700; /* Warna Emas Mewah */
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-    font-size: 11px;
-    display: flex;
-    gap: 3px;
-}
-
-/* Modifikasi warna bintang untuk mode terang agar kontras pas */
-body.light-mode .testimonial-stars {
-    color: #D48C00;
-}
-
-.testimonial-bubble {
-    background: var(--glass-border);
-    border-radius: 16px;
-    padding: 12px 16px;
+/* Bentuk Bubble Chat */
+.chat-bubble {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 12px 30px var(--shadow-color);
+    border-radius: 20px 20px 20px 4px; /* Ekor lancip di kiri bawah persis WA */
+    padding: 16px 20px;
     position: relative;
+    width: 90%; 
+    margin: 0; /* Merapat ke kiri layaknya chat masuk */
     text-align: left;
 }
 
-/* Buntut chat bubble khas aplikasi perpesanan */
-.testimonial-bubble::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 20px;
-    border-width: 0 8px 8px 8px;
-    border-style: solid;
-    border-color: transparent transparent var(--glass-border) transparent;
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
 }
 
-.testimonial-bubble p {
-    font-size: 13.5px;
-    color: var(--text-primary);
+.chat-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent-soft); /* Warna nama user agak kontras */
+}
+
+/* Bintang Emas */
+.chat-stars {
+    color: #FFD700;
+    font-size: 11px;
+    display: flex;
+    gap: 3px;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+}
+body.light-mode .chat-stars { color: #E5A300; }
+
+.chat-text {
+    font-size: 14px;
     line-height: 1.5;
+    color: var(--text-primary);
     font-weight: 500;
+}
+
+.chat-time {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   REVISI: TOMBOL ORDER DI BAGIAN BAWAH
+========================================= */
+
+.order-btn-bottom {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 18px;
+    margin-top: 10px;
+    border-radius: 24px;
+}
+
+.order-btn-bottom .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+}
+
+.order-btn-bottom .btn-text {
+    flex: 1; /* Supaya teks mendominasi ruang tengah */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-btn-bottom h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.order-btn-bottom p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.order-btn-bottom .arrow-icon {
+    font-size: 18px;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+}
+
+.order-btn-bottom:active .arrow-icon {
+    transform: translateX(5px);
 }
