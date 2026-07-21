@@ -145,4 +145,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateCarousel();
+
+
+    /* =========================================
+       REVISI BARU: LOGIKA ANIMASI TESTIMONI
+    ========================================= */
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const testimonialSlider = document.getElementById('testimonial-slider');
+    let testimonialIndex = 0;
+    let testimonialInterval;
+
+    function showNextTestimonial() {
+        testimonialCards[testimonialIndex].classList.remove('active');
+        testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
+        testimonialCards[testimonialIndex].classList.add('active');
+    }
+
+    function startTestimonialTimer() {
+        clearInterval(testimonialInterval);
+        // Otomatis berganti setiap 5000 ms (5 detik)
+        testimonialInterval = setInterval(showNextTestimonial, 5000); 
+    }
+
+    if (testimonialSlider && testimonialCards.length > 0) {
+        // Klik manual pada kotak chat untuk memicu pergantian instan
+        testimonialSlider.addEventListener('click', () => {
+            showNextTestimonial();
+            startTestimonialTimer(); // Timer direset kembali ke 5 detik setelah interaksi klik
+        });
+        startTestimonialTimer();
+    }
+
 });
